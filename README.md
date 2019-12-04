@@ -1,6 +1,6 @@
 # Sh-xBak.py
 -----------------------------------
-This Python program performs backup operations on Windows platform.
+This Python program performs flexible backup operations on Windows platform.
 
 Backup procedure is realised as creation/update of RAR format archive, using WinRAR as a backup engine.
 Each backup job should be preliminary configured in JSON configuration file.
