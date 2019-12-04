@@ -1,0 +1,38 @@
+{
+    "name": "Sh-xBak Statistics File",
+    "version": "20191022",
+    "PackageStatistics": [
+        {
+            "Package": "Sh-Test",
+            "LastBackup": "2019.10.28_11:30:02"
+        },
+        {
+            "Package": "Sh-Test2",
+            "LastBackup": "2019.10.28_11:30:15"
+        },
+        {
+            "Package": "Sh-WBak",
+            "LastBackup": "2019.10.30_09:43:59"
+        },
+        {
+            "Package": "Sh-WBak2-1ALL",
+            "LastBackup": "2019.10.30_09:29:39"
+        },
+        {
+            "Package": "Sh-WBak2-2REP",
+            "LastBackup": "2019.10.30_09:30:33"
+        },
+        {
+            "Package": "Sh-WBak2-3AL",
+            "LastBackup": "2019.10.30_09:31:33"
+        },
+        {
+            "Package": "Sh-WBak2-4PA1",
+            "LastBackup": "2019.10.30_09:32:07"
+        },
+        {
+            "Package": "Sh-WBak2-5PA2",
+            "LastBackup": "2019.10.30_09:32:36"
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+	"name": "Sh-xBak Job File",
+    "version": "20191022",
+
+    "WorkModes": {
+        "01": "Local_Drive",
+        "02": "Network_Drive",
+        "03": "VC_Volume", 
+        "51": "Check_Logs",
+        "52": "Check_Last_Bak -???"
+    },  
+
+    "JobSwitches": {
+        "-j": "Job",
+        "-p": "Password",
+        "-d": "DriveMountLetter",
+        "-sn": "ServerName",
+        "-sa": "ServerAccount",
+        "-sp": "ServerAccountPassword",
+        "-sd": "ServerDisconnectDelay",
+        "-vn": "VolumeName",
+        "-vp": "VolumePassword"
+    },
+
+    "BakDirectory": {
+		"WBak_01": "\\_Data\\WBak\\",
+		"xBak_01": "\\_Data\\xBak\\"
+    },
+
+    "BakDestination": {
+		"GoogleDriveEN": "%USERPROFILE%\\Google Drive",
+		"GoogleDriveRU": "%USERPROFILE%\\Google Диск",
+        "MEGAdrive": "%USERPROFILE%\\Documents\\MEGA",
+        "DriveRoot": ""
+    },
+    
+    "ProgramPaths": {
+        "Work_01": {
+            "WinRAR": "C:/Program Files/WinRar/winrar1.exe",
+            "VeraCrypt": "%USERPROFILE%/Progams/VeraCrypt/VeraCrypt.exe"
+        },
+        "Home_01": {
+            "WinRAR": "C:/Program Files/WinRar/winrar.exe",
+            "VeraCrypt": "%USERPROFILE%/Programs/VeraCrypt/VeraCrypt.exe"
+        }
+    },
+
+    "Packages": {
+        "Sh-Test": {
+            "BakFile": "Sh-BakTest",
+            "Password": 1,
+            "IncludeFile": "sh-testbak-include.lst",
+            "ExcludeFile": "sh-testbak-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-Test2": {
+            "BakFile": "Sh-BakTest2",
+            "Password": 1,
+            "IncludeFile": "sh-testbak2-include.lst",
+            "ExcludeFile": "sh-testbak2-exclude.lst",
+            "CycleDays": 30            
+        },
+        "Sh-WBak": {
+            "BakFile": "Sh-WBak",
+            "Password": 1,
+            "IncludeFile": "sh-wbak-include.lst",
+            "ExcludeFile": "sh-wbak-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-WBak2-4PA1": {
+            "BakFile": "Sh-WBak2-4PA1",
+            "Password": 1,
+            "IncludeFile": "sh-wbak2-4PA1-include.lst",
+            "ExcludeFile": "sh-wbak2-4PA1-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-WBak2-5PA2": {
+            "BakFile": "Sh-WBak2-5PA2",
+            "Password": 1,
+            "IncludeFile": "sh-wbak2-5PA2-include.lst",
+            "ExcludeFile": "sh-wbak2-5PA2-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-WBak2-3AL": {
+            "BakFile": "Sh-WBak2-3AL",
+            "Password": 1,
+            "IncludeFile": "sh-wbak2-3AL-include.lst",
+            "ExcludeFile": "sh-wbak2-3AL-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-WBak2-2REP": {
+            "BakFile": "Sh-WBak2-2REP",
+            "Password": 1,
+            "IncludeFile": "sh-wbak2-2REP-include.lst",
+            "ExcludeFile": "sh-wbak2-2REP-exclude.lst",
+            "CycleDays": 30
+        },
+        "Sh-WBak2-1ALL": {
+            "BakFile": "Sh-WBak2-1ALL",
+            "Password": 1,
+            "IncludeFile": "sh-wbak2-1ALL-include.lst",
+            "ExcludeFile": "sh-wbak2-1ALL-exclude.lst",
+            "CycleDays": 30
+        },
+    },
+
+    "Jobs": {
+        "shTest_LD": {
+            "PackageList": ["Sh-Test"],
+            "WorkMode": "Local_Drive",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "GoogleDriveEN",
+            "ProgramPaths": "Work_01",
+            "Password": "none"
+        },
+        "shTest_LDM": {
+            "WorkMode": "Local_Drive",
+            "PackageList": [
+                "Sh-Test", 
+                "Sh-Test2"
+            ],
+            "BakDirectory": "WBak_01",
+            "BakDestination": "GoogleDriveEN",
+            "ProgramPaths": "Work_01",
+            "Password": "none"
+        },
+        "shTest_ND": {
+            "PackageList": ["Sh-Test", "Sh-Test2"],
+            "WorkMode": "Network_Drive",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "DriveRoot",
+            "ProgramPaths": "Work_01",
+            "DriveMountLetter": "Z",
+            "ServerName": "?",
+            "ServerAccount": "?",
+            "ServerAccountPassword": "?",
+            "ServerDisconnectDelay": "10",
+            "Password": "none"
+        },
+        "shTest_VC": {
+            "PackageList": [
+                "Sh-Test",
+                "Sh-Test2"
+            ],
+            "WorkMode": "VC_Volume",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "DriveRoot",
+            "ProgramPaths": "Work_01",
+            "DriveMountLetter": "V",
+            "VolumeName": "?",
+            "VolumePassword": "?",
+            "Password": "none"
+        },
+        "Check_Logs": {
+            "WorkMode": "Check_Logs",
+            "ProgramPaths": "Work_01"            
+        },
+        "WBak2_LD01": {
+            "PackageList": [
+                "Sh-WBak2-1ALL",
+                "Sh-WBak2-2REP",
+                "Sh-WBak2-3AL",
+                "Sh-WBak2-4PA1",
+                "Sh-WBak2-5PA2"
+            ],
+            "WorkMode": "Local_Drive",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "GoogleDriveEN",
+            "ProgramPaths": "Work_01"
+        },
+        "WBak2_VC01": {
+            "PackageList": [
+                "Sh-WBak2-1ALL",
+                "Sh-WBak2-2REP",
+                "Sh-WBak2-3AL",
+                "Sh-WBak2-4PA1",
+                "Sh-WBak2-5PA2"
+            ],
+            "WorkMode": "VC_Volume",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "DriveRoot",
+            "ProgramPaths": "Work_01",
+            "DriveMountLetter": "?",
+            "VolumeName": "?",
+            "VolumePassword": "?",
+            "Password": "?"
+        },
+        "WBak_LD01": {
+            "PackageList": ["Sh-WBak"],
+            "WorkMode": "Local_Drive",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "GoogleDriveEN",
+            "ProgramPaths": "Work_01"
+        },
+        "WBak_VC01": {
+            "PackageList": ["Sh-WBak"],
+            "WorkMode": "VC_Volume",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "DriveRoot",
+            "ProgramPaths": "Work_01",
+            "DriveMountLetter": "?",
+            "VolumeName": "?",
+            "VolumePassword": "?",
+            "Password": "?"
+        },
+        "WBak_ND01": {
+            "PackageList": ["Sh-WBak"],
+            "WorkMode": "Network_Drive",
+            "BakDirectory": "WBak_01",
+            "BakDestination": "DriveRoot",
+            "ProgramPaths": "Work_01",
+            "DriveMountLetter": "?",
+            "ServerName": "tbd",
+            "ServerAccount": "tbd",
+            "ServerAccountPassword": "tbd"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+_bak/
+_img/
+_include/
+*.log
+*.err
+*.json0
+*.py0
