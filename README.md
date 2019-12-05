@@ -1,7 +1,6 @@
 # Sh-xBak.py
 
 ## Description
------------------------------------
 This Python program performs flexible backup operations on Windows platform.
 
 Backup procedure is realised as creation/update of RAR format archive, using WinRAR as a backup engine.
@@ -18,13 +17,11 @@ Currently the following work-modes are avaialable:
 - Special mode for checking (1) size of LOG file and (2) existence of ERR file. If LOG size exceeds a pre-defined volume or if ERR file exists, the appropriate erroe message will displayed.
 
 ## Usage
------------------------------------
-**Sh-xBak -j jobname -p archive_password [-opt_switch opt_value ....]**
+**Pythonw.exe Sh-xBak.py -j jobname -p archive_password [-opt_switch opt_value ....]**
 
 *All optional switches are listed in the JSON settings file in the "JobSwitches" section.*
 
 ## Dependencies
------------------------------------
 This program uses library modules:
 - sh_messagebox
 - sh_sysutil
