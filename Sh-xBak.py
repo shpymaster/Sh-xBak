@@ -40,8 +40,9 @@ KEY_VOLUME_NAME = "-vn"
 KEY_VOLUME_PSW = "-vp"
 
 PROGRAM_NAME = "Sh-xBak"
-PROGRAM_VER = "1.1"
+PROGRAM_VER = "1.2"
 EXIT_DELAY = 10000 #msec
+ERROR_DELAY_MULTIPLIER = 4
 PROGRAM_ICON = (__file__[:-3] + ".ico")
 FILE_SETTINGS = (__file__[:-3] + ".json")
 FILE_STATISTICS = (__file__[:-3] + "-stat.json")
@@ -64,7 +65,9 @@ def script_exit(seErrorCode, seExitCode, seString=None):
         msgText = "ERROR:\n" + msgText + "\nExit coode: " + str(seExitCode)
     log_event(eventText, seErrorCode if seErrorCode else None)
     shmb.shShowMessage(0, msgTitle, msgText, 
-        shmb.SH_MESSAGE_ERROR if seErrorCode else shmb.SH_MESSAGE_INFO, EXIT_DELAY, PROGRAM_ICON)
+        shmb.SH_MESSAGE_ERROR if seErrorCode else shmb.SH_MESSAGE_INFO, 
+        (EXIT_DELAY * ERROR_DELAY_MULTIPLIER) if seErrorCode else EXIT_DELAY, 
+        PROGRAM_ICON)
     sys.exit(seExitCode)
 
 def log_event(leEvent, leErrorCode=None):
