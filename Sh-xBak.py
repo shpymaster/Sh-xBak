@@ -1,6 +1,7 @@
 ''' -----------------------
 program: Sh-xBak
-version: 1.1.20191022
+version: 1.3
+ver_date: 20191210
 
 usage: Sh-xBak -j jobname -p archive_password [-opt_switch opt_value ....]
 optional swithes are listed in the JSON settings file
@@ -40,7 +41,7 @@ KEY_VOLUME_NAME = "-vn"
 KEY_VOLUME_PSW = "-vp"
 
 PROGRAM_NAME = "Sh-xBak"
-PROGRAM_VER = "1.2"
+PROGRAM_VER = "1.3"
 EXIT_DELAY = 10000 #msec
 ERROR_DELAY_MULTIPLIER = 4
 PROGRAM_ICON = (__file__[:-3] + ".ico")
@@ -192,9 +193,14 @@ if __name__ == "__main__":
         except FileNotFoundError:
             script_exit(1, 8, get_job_option(KEY_DRIVE_LETTER))
         run_task_winrar(get_job_option(KEY_DRIVE_LETTER))
+
         log_event("Dismounting VCrypt volume")
-        exeVCrypt.set_arguments (vcSwitchesDismount)
-        prgExitCode = exeVCrypt.run()
+        try:
+            exeVCryptFinish = shsu.shExeFile(programPathsRecord["VeraCrypt_dismount_ALL"], "")
+        except:
+            exeVCryptFinish =  exeVCrypt
+            exeVCryptFinish.set_arguments(vcSwitchesDismount)
+        prgExitCode = exeVCryptFinish.run(useShell=True)
         if prgExitCode: script_exit(prgExitCode, 7, "VCrypt exit code: " + str(prgExitCode) )
 
     elif workMode == "Local_Drive":
