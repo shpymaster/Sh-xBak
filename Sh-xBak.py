@@ -171,7 +171,7 @@ if __name__ == "__main__":
     log_event("Job name: " + jobName)
     shmb.shShowMessage(0, PROGRAM_NAME, PROGRAM_NAME + " started\n Job name: " + jobName, 
         shmb.SH_MESSAGE_INFO, EXIT_DELAY, PROGRAM_ICON)
-
+    
     programPathsRecord = settingsData["ProgramPaths"][jobRecord["ProgramPaths"]]   
     workMode = jobRecord["WorkMode"]
 

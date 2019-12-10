@@ -1,8 +1,9 @@
 _bak/
 _img/
 _include/
+_include0/
 *.log
 *.err
-*.json0
+*.json*
 *.py0
 launch.json

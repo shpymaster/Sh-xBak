@@ -103,7 +103,7 @@
             "IncludeFile": "sh-wbak2-1ALL-include.lst",
             "ExcludeFile": "sh-wbak2-1ALL-exclude.lst",
             "CycleDays": 30
-        },
+        }
     },
 
     "Jobs": {
