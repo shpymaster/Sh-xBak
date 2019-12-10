@@ -37,11 +37,13 @@
     "ProgramPaths": {
         "Work_01": {
             "WinRAR": "C:/Program Files/WinRar/winrar1.exe",
-            "VeraCrypt": "%USERPROFILE%/Progams/VeraCrypt/VeraCrypt.exe"
+            "VeraCrypt": "%USERPROFILE%/Progams/VeraCrypt/VeraCrypt.exe",
+            "VeraCrypt_dismount_ALL": "%USERPROFILE%/Programs/Lnk/VCrypt_dAll.lnk"
         },
         "Home_01": {
             "WinRAR": "C:/Program Files/WinRar/winrar.exe",
-            "VeraCrypt": "%USERPROFILE%/Programs/VeraCrypt/VeraCrypt.exe"
+            "VeraCrypt": "%USERPROFILE%/Programs/VeraCrypt/VeraCrypt.exe",
+            "VeraCrypt_dismount_ALL": "%USERPROFILE%/Programs/Lnk/VCrypt_dAll.lnk"
         }
     },
 
